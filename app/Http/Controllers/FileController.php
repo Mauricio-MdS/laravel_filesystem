@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class FileController extends Controller
 {
@@ -16,6 +17,12 @@ class FileController extends Controller
         Storage::put('file1.txt', 'Conteúdo do ficheiro 1');
         Storage::disk('local')->put('file2.txt', 'Conteúdo do ficheiro 2');
 
-        echo 'Fim';
+        return redirect()->route('home');
+    }
+
+    public function storageLocalAppend()
+    {
+        Storage::append('file3.txt', Str::random(100));
+        return redirect()->route('home');
     }
 }
