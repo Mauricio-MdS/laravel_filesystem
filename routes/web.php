@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\FileController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'home');
+Route::get('/', [FileController::class, 'index'])->name('home');
+Route::get('/storage_local_create', [FileController::class, 'storageLocalCreate'])->name('storage.local.create');
