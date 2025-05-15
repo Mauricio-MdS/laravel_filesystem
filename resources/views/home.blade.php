@@ -15,7 +15,10 @@
                         linhas</a>
                 </div>
                 <div class="d-flex gap-5 mb-5"><a href="{{ route('storage.local.check.file') }}"
-                        class="btn btn-primary">Verificar a existência de arquivo</a></div>
+                        class="btn btn-primary">Verificar a existência de arquivo</a>
+                    <a href="{{ route('storage.local.store.json') }}" class="btn btn-primary">Guardar JSON</a>
+                    <a href="{{ route('storage.local.read.json') }}" class="btn btn-primary">Ler JSON</a>
+                </div>
             </div>
         </div>
     </div>

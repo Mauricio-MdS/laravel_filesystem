@@ -51,4 +51,32 @@ class FileController extends Controller
             echo "O ficheiro não existe.";
         }
     }
+
+    public function storeJson()
+    {
+        $data = [
+            [
+                'name' => 'joao',
+                'email' => 'joao@gmail.com'
+            ],
+            [
+                'name' => 'ana',
+                'email' => 'ana@gmail.com'
+            ],
+            [
+                'name' => 'carlos',
+                'email' => 'carlos@gmail.com'
+            ],
+        ];
+
+        Storage::put('data.json', json_encode($data));
+        echo "Ficheiro JSON criado com sucesso!";
+    }
+
+    public function readJson()
+    {
+        $data = Storage::json('data.json');
+        echo '<pre>';
+        print_r($data);
+    }
 }
