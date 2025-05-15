@@ -41,4 +41,14 @@ class FileController extends Controller
             echo "<p>$line</p>";
         }
     }
+
+    public function storageLocalCheckFile()
+    {
+        $exists = Storage::exists('file1.txt');
+        if ($exists) {
+            echo "O ficheiro existe.";
+        } else {
+            echo "O ficheiro não existe.";
+        }
+    }
 }
