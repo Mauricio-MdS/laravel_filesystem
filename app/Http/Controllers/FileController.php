@@ -86,4 +86,14 @@ class FileController extends Controller
         echo '<pre>';
         print_r($files);
     }
+
+    public function deleteFile()
+    {
+        if (Storage::exists('file1.txt')) {
+            Storage::delete('file1.txt');
+            echo "Ficheiro removido com sucesso!";
+        } else {
+            echo "O ficheiro não existe.";
+        }
+    }
 }
