@@ -96,4 +96,15 @@ class FileController extends Controller
             echo "O ficheiro não existe.";
         }
     }
+
+    public function createFolder()
+    {
+        Storage::makeDirectory('documents');
+        Storage::makeDirectory('documents/teste');
+    }
+
+    public function deleteFolder()
+    {
+        Storage::deleteDirectory('documents');
+    }
 }
