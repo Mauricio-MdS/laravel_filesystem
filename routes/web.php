@@ -16,3 +16,7 @@ Route::get('/storage_local_delete', [FileController::class, 'deleteFile'])->name
 Route::get('/storage_local_create_folder', [FileController::class, 'createFolder'])->name('storage.local.create.folder');
 Route::get('/storage_local_delete_folder', [FileController::class, 'deleteFolder'])->name('storage.local.delete.folder');
 Route::get('/storage_local_list_files_metadata', [FileController::class, 'listFilesWithMetadata'])->name('storage.local.list.files.metadata');
+Route::get('/storage_local_list_files_for_download', [FileController::class, 'listFilesForDownload'])->name('storage.local.list.for.download');
+Route::get('/download/{file}', function ($file) {
+    return response()->download('storage/app/' . $file);
+})->name('download');
