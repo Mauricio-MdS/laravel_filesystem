@@ -24,6 +24,8 @@
                 <div class="d-flex gap-5 mb-5">
                     <a href="{{ route('storage.local.create.folder') }}" class="btn btn-primary">Criar pasta</a>
                     <a href="{{ route('storage.local.delete.folder') }}" class="btn btn-primary">Remover pasta</a>
+                    <a href="{{ route('storage.local.list.files.metadata') }}" class="btn btn-primary">Listar arquivos com metadados</a>
+
                 </div>
             </div>
         </div>
