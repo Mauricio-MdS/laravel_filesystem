@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -138,5 +139,14 @@ class FileController extends Controller
         }
 
         return view('list-files-for-download', compact('files'));
+    }
+
+    public function uploadFile(Request $request)
+    {
+        $request->validate([
+            'arquivo' => 'required|mimes:pdf,jpg,png|max:2048'
+        ]);
+        $request->file('arquivo')->store('public');
+        echo 'Arquivo enviado com sucesso';
     }
 }
